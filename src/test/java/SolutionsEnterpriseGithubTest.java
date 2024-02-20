@@ -13,7 +13,6 @@ public class SolutionsEnterpriseGithubTest {
     static void beforeAll() {
         Configuration.browserSize = "1280x720";
         Configuration.baseUrl = "https://github.com";
-      //  Configuration.pageLoadStrategy = "eager";
 
     }
 
