@@ -1,12 +1,14 @@
 import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.DragAndDropOptions.to;
 import static com.codeborne.selenide.Selenide.*;
 
-public class DragAndDrop {
+public class DragAndDropTest {
 
+    @BeforeAll
     static void BeforeAll() {
         Configuration.browserSize = "1280x720";
     }
@@ -16,7 +18,7 @@ public class DragAndDrop {
     // Проверьте, что прямоугольники действительно поменялись
 
     @Test
-    void MoveToElementTest() {
+    void moveToElementTest() {
 
         open("https://the-internet.herokuapp.com/drag_and_drop");
         actions().clickAndHold($("#column-a")).moveToElement($("#column-b")).release().perform();
@@ -28,7 +30,7 @@ public class DragAndDrop {
     // В Selenide есть команда $(element).dragAndDrop($(to-element)), проверьте работает ли тест, если использовать её вместо actions()
 
     @Test
-    void DragAndDropTest() {
+    void dragAndDropTest() {
 
         open("https://the-internet.herokuapp.com/drag_and_drop");
         $("#column-a").dragAndDrop(to($("#column-b")));

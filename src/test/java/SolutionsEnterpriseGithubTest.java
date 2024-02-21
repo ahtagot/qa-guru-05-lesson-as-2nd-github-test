@@ -18,7 +18,7 @@ public class SolutionsEnterpriseGithubTest {
 
 
     @Test
-    void CheckEnterprisePageIsLoaded() {
+    void checkEnterprisePageIsLoaded() {
 // На главной странице GitHub выберите меню Solutions -> Enterprize
         open("/");
         $(byText("Solutions")).hover();
